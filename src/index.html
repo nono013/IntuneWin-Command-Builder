@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur IntuneWin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <div class="hero__text">
+                <p class="eyebrow">Automatisation Intune</p>
+                <h1>Génère ta commande <span>IntuneWinAppUtil.exe</span></h1>
+                <p class="lead">Sélectionne les dossiers, on assemble la ligne de commande. Copie-colle dans PowerShell et c'est parti.</p>
+            </div>
+            <div class="hero__badge">
+                <p class="badge__title">3 étapes</p>
+                <p class="badge__text">Source · Setup · Sortie</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <header class="card__header">
+                <div>
+                    <p class="eyebrow">Paramètres</p>
+                    <h2>Chemins nécessaires</h2>
+                    <p class="muted">Chaque bouton ouvre l’explorateur de fichiers (dossier ou fichier selon le champ).</p>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="silentFlag">
+                    <label for="silentFlag">Mode silencieux (-q)</label>
+                </div>
+            </header>
+
+            <div class="grid">
+                <div class="field">
+                    <label for="sourcePath">Dossier source (-c)</label>
+                    <div class="field__row">
+                        <input id="sourcePath" type="text" placeholder="Exemple : C:\Packages\MonApp" autocomplete="off">
+                        <button class="ghost" data-picker="source">Choisir</button>
+                    </div>
+                    <p class="hint">Contient l'installeur et les fichiers associés.</p>
+                </div>
+
+                <div class="field">
+                    <label for="setupPath">Fichier setup (-s)</label>
+                    <div class="field__row">
+                        <input id="setupPath" type="text" placeholder="Exemple : C:\Packages\MonApp\setup.exe" autocomplete="off">
+                        <button class="ghost" data-picker="setup">Choisir</button>
+                    </div>
+                    <p class="hint">Fichier à lancer pendant l'installation (exe, msi, etc.).</p>
+                </div>
+
+                <div class="field">
+                    <label for="outputPath">Dossier de sortie (-o)</label>
+                    <div class="field__row">
+                        <input id="outputPath" type="text" placeholder="Exemple : C:\Packages\IntuneBuild" autocomplete="off">
+                        <button class="ghost" data-picker="output">Choisir</button>
+                    </div>
+                    <p class="hint">Répertoire où créer le .intunewin.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <header class="card__header">
+                <div>
+                    <p class="eyebrow">Résultat</p>
+                    <h2>Commande générée</h2>
+                    <p class="muted">Revoir les chemins si besoin, puis copier.</p>
+                </div>
+                <div class="actions">
+                    <button id="executeBtn">Exécuter</button>
+                    <button id="copyBtn">Copier</button>
+                </div>
+            </header>
+            <pre class="command" id="commandBox">En attente des chemins...</pre>
+        </section>
+    </main>
+
+    <!-- Modal de paramètres -->
+    <div id="settingsModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Paramètres</h2>
+                <button id="closeSettingsBtn" class="close-btn">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="field">
+                    <label for="intuneExePath">Chemin vers IntuneWinAppUtil.exe</label>
+                    <div class="field__row">
+                        <input id="intuneExePath" type="text" placeholder="Exemple : C:\Tools\IntuneWinAppUtil.exe" autocomplete="off">
+                        <button class="ghost" id="selectIntuneExeBtn">Choisir</button>
+                    </div>
+                    <p class="hint">Emplacement du fichier IntuneWinAppUtil.exe sur votre système.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="saveSettingsBtn">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de configuration initiale -->
+    <div id="initialSetupModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Configuration initiale</h2>
+            </div>
+            <div class="modal-body">
+                <p class="muted" style="margin-bottom: 16px;">Bienvenue ! Pour commencer, veuillez indiquer l'emplacement de IntuneWinAppUtil.exe sur votre système.</p>
+                <div class="field">
+                    <label for="initialIntuneExePath">Chemin vers IntuneWinAppUtil.exe</label>
+                    <div class="field__row">
+                        <input id="initialIntuneExePath" type="text" placeholder="Exemple : C:\Tools\IntuneWinAppUtil.exe" autocomplete="off">
+                        <button class="ghost" id="initialSelectIntuneExeBtn">Choisir</button>
+                    </div>
+                    <p class="hint">Vous pourrez modifier ce paramètre plus tard via le menu Fichier > Paramètres.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="initialSaveBtn">Continuer</button>
+            </div>
+        </div>
+    </div>
+
+    <template id="toast">
+        <div class="toast">Copié !</div>
+    </template>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

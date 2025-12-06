@@ -1,0 +1,54 @@
+{
+  "name": "intunewin-command-builder",
+  "version": "1.0.0",
+  "description": "Web app permettant de générer automatiquement la commande IntuneWinAppUtil.exe pour créer des packages .intunewin.",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:all": "electron-builder -mw",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nono013/IntuneWin-Command-Builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nono013/IntuneWin-Command-Builder/issues"
+  },
+  "homepage": "https://github.com/nono013/IntuneWin-Command-Builder#readme",
+  "build": {
+    "appId": "com.intunewin.commandbuilder",
+    "productName": "IntuneWin Command Builder",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron-main.js",
+      "preload.js",
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "icon.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "icon.png",
+      "category": "public.app-category.utilities"
+    }
+  },
+  "devDependencies": {
+    "electron": "^39.2.6",
+    "electron-builder": "^25.1.8"
+  }
+}
