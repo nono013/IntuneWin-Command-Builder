@@ -5,10 +5,7 @@
   "main": "electron-main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --win",
-    "build:mac": "electron-builder --mac",
-    "build:all": "electron-builder -mw",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "electron-builder --win"
   },
   "repository": {
     "type": "git",
@@ -38,13 +35,7 @@
       "target": [
         "nsis",
         "portable"
-      ],
-      "icon": "icon.png"
-    },
-    "mac": {
-      "target": "dmg",
-      "icon": "icon.png",
-      "category": "public.app-category.utilities"
+      ]
     }
   },
   "devDependencies": {
