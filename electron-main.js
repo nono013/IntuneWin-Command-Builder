@@ -40,7 +40,7 @@ function createWindow() {
             enableRemoteModule: true
         },
         backgroundColor: '#0b1220',
-        icon: path.join(__dirname, 'icon.png')
+        icon: path.join(__dirname, 'icon.ico')
     });
 
     mainWindow.loadFile('src/index.html');

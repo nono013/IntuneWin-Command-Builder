@@ -29,9 +29,11 @@
       "electron-main.js",
       "preload.js",
       "src/**/*",
+      "icon.ico",
       "package.json"
     ],
     "win": {
+      "icon": "icon.ico",
       "target": [
         "nsis",
         "portable"
