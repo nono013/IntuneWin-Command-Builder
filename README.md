@@ -45,11 +45,12 @@ IntuneWin Command Builder simplifie la création de packages `.intunewin` en gé
 ### Option 1 : Télécharger l'exécutable (Recommandé)
 
 1. Rendez-vous sur la page [Releases](https://github.com/nono013/IntuneWin-Command-Builder/releases)
-2. Téléchargez la dernière version :
-   - `IntuneWin-Command-Builder-Setup-x.x.x.exe` (installateur)
-   - `IntuneWin-Command-Builder-x.x.x.exe` (version portable)
-3. Exécutez le fichier téléchargé
-4. Au premier lancement, configurez le chemin vers `IntuneWinAppUtil.exe`
+2. Téléchargez la dernière version : `IntuneWin-Command-Builder-x.x.x.exe` (version portable)
+3. Placez le fichier dans un dossier de votre choix (ex: `C:\Tools\`)
+4. Double-cliquez pour lancer l'application
+5. Au premier lancement, configurez le chemin vers `IntuneWinAppUtil.exe`
+
+**Note** : Aucune installation requise - l'application est entièrement portable et peut être lancée depuis n'importe quel emplacement (y compris une clé USB).
 
 ### Option 2 : Build depuis les sources
 
