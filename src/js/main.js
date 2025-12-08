@@ -1,4 +1,4 @@
-﻿const { ipcRenderer } = require('electron');
+const { ipcRenderer } = require('electron');
 
 const sourceInput = document.getElementById('sourcePath');
 const setupInput = document.getElementById('setupPath');
@@ -147,10 +147,11 @@ async function loadConfiguration() {
     const config = await ipcRenderer.invoke('load-config');
     intuneWinAppUtilPath = config.intuneWinAppUtilPath || '';
 
-    // Toujours afficher le modal de configuration au démarrage
-    // Si un chemin existe déjà, pré-remplir le champ
-    initialIntuneExePath.value = intuneWinAppUtilPath;
-    initialSetupModal.style.display = 'flex';
+    // N'afficher le modal QUE si aucun chemin n'est configuré
+    if (!intuneWinAppUtilPath) {
+        initialIntuneExePath.value = '';
+        initialSetupModal.style.display = 'flex';
+    }
 
     updateCommand();
 }
