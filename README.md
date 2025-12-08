@@ -98,7 +98,7 @@ Deux options :
 
 ### Modifier la configuration
 
-**Fichier > Paramètres** (ou `Ctrl+,` / `Cmd+,`)
+**Fichier > Paramètres** (ou `Ctrl+,`)
 - Modifiez le chemin vers `IntuneWinAppUtil.exe` si nécessaire
 
 ## Structure du projet
