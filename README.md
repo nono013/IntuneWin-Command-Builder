@@ -162,65 +162,6 @@ L'application suit l'architecture Electron standard :
 - **Renderer Process** ([src/js/main.js](src/js/main.js)) : Interface utilisateur et logique client
 - **IPC Communication** : Communication bidirectionnelle entre les processus via `ipcMain` et `ipcRenderer`
 
-### Ajouter des fonctionnalités
-
-1. Ajouter des handlers IPC dans [electron-main.js](electron-main.js) si besoin d'accès système
-2. Ajouter la logique UI dans [src/js/main.js](src/js/main.js)
-3. Modifier l'interface dans [src/index.html](src/index.html)
-4. Styler dans [src/css/style.css](src/css/style.css)
-
-## Dépannage
-
-### L'application ne démarre pas
-
-- Vérifiez que vous avez Windows 10 ou 11
-- Essayez la version portable si l'installateur pose problème
-
-### La commande ne s'exécute pas
-
-- Vérifiez que PowerShell n'est pas bloqué par votre politique d'exécution
-- Vérifiez que le chemin vers `IntuneWinAppUtil.exe` est correct
-
-### Le modal de configuration s'affiche toujours
-
-- Vérifiez que vous avez bien cliqué sur "Continuer" ou "Enregistrer"
-- Vérifiez les permissions d'écriture dans `%APPDATA%`
-
-### Problèmes de permissions
-
-- L'application ne nécessite **pas** de droits administrateur
-- Si PowerShell demande des droits admin, c'est lié à `IntuneWinAppUtil.exe`, pas à cette application
-
-## Contribuer
-
-Les contributions sont les bienvenues ! Pour contribuer :
-
-1. Forkez le projet
-2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
-3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
-4. Pushez vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrez une Pull Request
-
-### Guidelines
-
-- Suivez le style de code existant
-- Testez vos changements avant de soumettre
-- Mettez à jour la documentation si nécessaire
-
-## FAQ
-
-**Q : L'application fonctionne-t-elle sur macOS ou Linux ?**
-R : Non, elle est conçue spécifiquement pour Windows car `IntuneWinAppUtil.exe` est un outil Windows uniquement.
-
-**Q : Puis-je utiliser cette application sans IntuneWinAppUtil.exe ?**
-R : L'application génère la commande même sans l'outil, mais vous ne pourrez pas l'exécuter directement. Vous devrez copier la commande et l'exécuter plus tard.
-
-**Q : Les données sont-elles envoyées quelque part ?**
-R : Non, l'application fonctionne 100% en local. Aucune donnée n'est envoyée sur Internet.
-
-**Q : Puis-je modifier les chemins manuellement ?**
-R : Oui, les champs sont éditables. Vous pouvez taper ou coller des chemins directement.
-
 ## Licence
 
 Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
@@ -232,17 +173,6 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 - GitHub : [@nono013](https://github.com/nono013)
 - Repository : [IntuneWin-Command-Builder](https://github.com/nono013/IntuneWin-Command-Builder)
 
-## Remerciements
-
-- Microsoft pour l'outil [IntuneWinAppUtil](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool)
-- La communauté Electron pour la documentation et les ressources
-
 ## Support
 
-Pour toute question ou problème :
-- Ouvrez une [Issue sur GitHub](https://github.com/nono013/IntuneWin-Command-Builder/issues)
-- Consultez les [Issues existantes](https://github.com/nono013/IntuneWin-Command-Builder/issues) avant de créer la vôtre
-
----
-
-⭐ Si ce projet vous aide, n'hésitez pas à lui donner une étoile sur GitHub !
+Pour toute question ou problème, ouvrez une [Issue sur GitHub](https://github.com/nono013/IntuneWin-Command-Builder/issues).
