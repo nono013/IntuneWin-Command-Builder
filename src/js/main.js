@@ -166,7 +166,7 @@ function updateCommand() {
     }
     const silent = silentFlag.checked ? ' -q' : '';
     const exePath = intuneWinAppUtilPath || 'IntuneWinAppUtil.exe';
-    const cmd = `"${exePath}" -c "${src}" -s "${setup}" -o "${out}"${silent}`;
+    const cmd = `& "${exePath}" -c "${src}" -s "${setup}" -o "${out}"${silent}`;
     commandBox.textContent = cmd;
 }
 
