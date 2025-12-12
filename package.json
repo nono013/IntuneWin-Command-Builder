@@ -1,6 +1,6 @@
 {
   "name": "intunewin-command-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web app permettant de générer automatiquement la commande IntuneWinAppUtil.exe pour créer des packages .intunewin.",
   "main": "electron-main.js",
   "scripts": {
